@@ -1,7 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-// import {Context} from '../../Store/Context'
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Context from "../../Store/Context";
 import styled from "styled-components";
 
@@ -58,7 +57,11 @@ const Navbar = styled.header`
     color: lightGray;
     font-weight: bold;
     font-size: 18px;
+    text-transform: capitalize;
   }
+  a.active { 
+  border-bottom: 2px solid white;
+   }
 `;
 
 export default function Navigation() {
@@ -70,34 +73,31 @@ export default function Navigation() {
     navigate("/authentication");
   };
 
-  console.log("navigation", users);
-  console.log("navigation", token);
-
   return (
     <Navbar>
       <div className="wrapper">
       <nav>
       <ul>
         {isLoggedIn && (
-          <Link to="/">
+          <NavLink activeClassName="active" to="/">
             <div className="tasks">My tasks</div>
-          </Link>
+          </NavLink>
         )}
 
   
             {!isLoggedIn && (
               <li>
-                <Link to="/">Home</Link>
+                <NavLink activeClassName="active" to="/">Home</NavLink>
               </li>
             )}
             {!isLoggedIn && (
               <li>
-                <Link to="/authentication">Login</Link>
+                <NavLink activeClassName="active" to="/authentication">Login</NavLink>
               </li>
             )}
             {isLoggedIn && (
               <li className="profile">
-                <Link to="/profile">Profile</Link>
+                <NavLink activeClassName="active" to="/profile">Profile</NavLink>
               </li>
             )}
             {users.map((user) => {

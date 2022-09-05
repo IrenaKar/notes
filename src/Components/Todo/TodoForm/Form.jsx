@@ -70,7 +70,7 @@ export default function Form() {
     setInitialValues,
     submitTodoHandler,
     editTodoHandler,
-    isEditing
+    isEditing,
   } = useContext(Context);
   const navigate = useNavigate();
 
@@ -93,7 +93,7 @@ export default function Form() {
       title: "",
       description: "",
       id: "",
-      date: ""
+      date: "",
     });
   };
 
@@ -144,7 +144,6 @@ export default function Form() {
             id="date"
             dateFormat="d MMM yyyy"
           />
-          {/* <input id="date" type="date" value={initialValues.date} onChange={setValuesHandler} placeholder="Pick a date" name="date" /> */}
         </fieldset>
         <div className="buttons">
           <button onClick={back} type="submit">

@@ -15,7 +15,6 @@ export default function ProfileForm() {
 
     const newPassword = newPasswordInput.current.value
 
-
     fetch('https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyAeKhmTsTae6lK1e2efI_xKsxbmwZbRdOQ', //change password firebase URL
       {
         method: "POST",
@@ -40,7 +39,6 @@ export default function ProfileForm() {
     e.preventDefault()
     setErrorMessage("This input is required")
   }
-
 
   return (
     <form className="form" onSubmit={newPasswordInput ? validate : submitHandler}>

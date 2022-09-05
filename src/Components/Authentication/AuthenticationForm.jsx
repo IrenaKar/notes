@@ -90,29 +90,6 @@ export default function AuthenticationForm() {
   const [errorMessage, setErrorMessage] = useState(false);
   const [message, setMessage] = useState("");
 
-  // getUsers
-
-  // useEffect(() => {
-  //   getUsers();
-  // }, []);
-
-  // useEffect(() => {
-  //   console.log(users);
-  // }, [users]);
-
-  // function getUsers() {
-  //   getDocs(usersCollectionRef)
-  //     .then((response) => {
-  //       console.log(response.docs);
-  //       const user = response.docs.map((doc) => ({
-  //         data: doc.data(),
-  //         id: doc.id
-  //       }));
-  //       setUsers(user);
-  //     })
-  //     .catch((error) => console.log(error));
-  // }
-
   const submitUsers = (e) => {
     const email = emailInputRef.current.value;
     const firstName = nameInputRef.current.value;
@@ -140,8 +117,6 @@ export default function AuthenticationForm() {
   const loginHandler = (token) => {
     login(token);
   };
-
-
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -246,7 +221,7 @@ export default function AuthenticationForm() {
         ) : (
           <>
             <fieldset>
-              <label htmlFor="name">Your FIrst Name</label>
+              <label htmlFor="name">Your First Name</label>
               <input
                 type="text"
                 id="name"

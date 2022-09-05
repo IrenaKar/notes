@@ -46,7 +46,7 @@ const ModalWrapper = styled.div`
 `;
 
 export default function Modal() {
-  const { initialValues, newValues, setValues, setInitialValues, id, deleteHandler } = useContext(Context);
+  const { initialValues, setInitialValues, id, deleteHandler } = useContext(Context);
   const navigate = useNavigate()
 
   const navigateHome = () => {
