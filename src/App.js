@@ -14,13 +14,13 @@ function App() {
   return (
     <div className="App">
       <Layout >
-        <Routes>
-          {!isLoggedIn && (<Route path='/authentication' element={<AuthenticationPage />} />)}
-          {isLoggedIn && (<Route path='/add-task' element={<Form />} />)}
-          {isLoggedIn && (<Route path='/delete-task' element={open ? <Modal /> : <Navigate to="/" />}  />)}
-          <Route path='/' element={<Homepage />} />
-          <Route path='/profile' element={isLoggedIn ? <UserProfile /> : <Navigate to="/authentication" />} />
-        </Routes>
+          <Routes>
+            {!isLoggedIn && (<Route path='/authentication' element={<AuthenticationPage />} />)}
+            {isLoggedIn && (<Route path='/add-task' element={<Form />} />)}
+            {isLoggedIn && (<Route path='/delete-task' element={open ? <Modal /> : <Navigate to="/" />} />)}
+            <Route path='/' element={<Homepage />} />
+            <Route path='/profile' element={isLoggedIn ? <UserProfile /> : <Navigate to="/authentication" />} />
+          </Routes>
       </Layout>
     </div>
   );
