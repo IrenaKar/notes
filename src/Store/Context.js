@@ -154,6 +154,7 @@ export const Provider = (props) => {
   }
 
   console.log(todos);
+  
 
   const deleteHandler = (id) => {
     const docRef = doc(db, "todos", id);
